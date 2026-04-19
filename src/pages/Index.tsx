@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card";
 import { Brain, Shield, Zap, ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import lungHero from "@/assets/lung-hero.png";
+import CustomCursor from "@/components/CustomCursor";
 
 const Index = () => {
   const navigate = useNavigate();
@@ -27,11 +28,14 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-hero">
-      <Navbar />
+    <div className="min-h-screen bg-gradient-hero relative">
+      <CustomCursor />
       
-      {/* Hero Section */}
-      <section className="container mx-auto px-4 pt-32 pb-20">
+      <div className="relative z-10 flex flex-col min-h-screen">
+        <Navbar />
+        
+        {/* Hero Section */}
+        <section className="container mx-auto px-4 pt-32 pb-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8 animate-fade-in">
             <h1 className="text-5xl md:text-6xl font-bold leading-tight">
@@ -127,7 +131,8 @@ const Index = () => {
             Upload X-Ray Now
           </Button>
         </Card>
-      </section>
+        </section>
+      </div>
     </div>
   );
 };
